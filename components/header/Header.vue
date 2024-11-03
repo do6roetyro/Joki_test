@@ -35,7 +35,8 @@ const { isCityMenuOpen, toggleCityMenu, isMenuOpen, toggleMenu } = useToggleMenu
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    position: fixed;
+    width: 100vw;
     top: 0;
     background-color: rgba(255, 255, 255, 0.75);
     padding: 10px 20px;
@@ -47,7 +48,7 @@ const { isCityMenuOpen, toggleCityMenu, isMenuOpen, toggleMenu } = useToggleMenu
             #e84bba 65.89%,
             #9310d8 99.13%);
     border-image-slice: 1;
-
+    z-index: 1000;
     &__left,
     &__right {
         display: flex;

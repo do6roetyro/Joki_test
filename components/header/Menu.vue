@@ -20,10 +20,10 @@ const emit = defineEmits(['close'])
 <style scoped lang="scss">
 .menu-overlay {
   position: fixed;
-  top: 62px; 
+  top: 61.5px; 
   left: 0;
   width: 100%;
-  height: calc(100% - 100px); 
+  height: 100vh;
   background: #ffffff;
   display: flex;
   justify-content: flex-end;
@@ -55,7 +55,7 @@ const emit = defineEmits(['close'])
         transition: color 0.3s;
         
         &:hover {
-          color: #f269af; /* Add hover effect color */
+          color: #f269af; 
         }
       }
     }

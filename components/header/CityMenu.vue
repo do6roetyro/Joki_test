@@ -37,8 +37,8 @@ function selectCity(city: string) {
             cursor: pointer;
 
             &:hover {
-                background-color: #f0f0f0;
-                border-radius: 16px;
+                color: #f269af;
+                
             }
         }
     }
