@@ -167,5 +167,13 @@ onBeforeUnmount(() => {
     &:hover {
         color: #ffeb3b;
     }
+
 }
+
+
+@media (max-width: 768px) {
+        .sidebar-navigation {
+            display: none;
+        }
+    }
 </style>

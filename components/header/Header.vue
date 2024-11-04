@@ -39,7 +39,6 @@ const { isCityMenuOpen, toggleCityMenu, isMenuOpen, toggleMenu } = useToggleMenu
 </script>
 
 <style scoped lang="scss">
-.header {}
 
 .header__container {
     display: flex;
@@ -177,7 +176,7 @@ const { isCityMenuOpen, toggleCityMenu, isMenuOpen, toggleMenu } = useToggleMenu
 
     img {
         width: 40px;
-        height: 40px;
+        height: 41px;
     }
 }
 

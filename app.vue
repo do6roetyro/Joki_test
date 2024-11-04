@@ -1,13 +1,21 @@
 <template>
-  <div>
+  <div class="body__container">
     <Header />
-    <Hero />
+    <Main />
   </div>
 </template>
 
-<!-- app.vue -->
 <script setup lang="ts">
-import Header from './components/header/Header.vue' 
-import SidebarNavigation from './components/header/SidebarNavigation.vue';
-import Hero from './components/hero/Hero.vue';
+import Header from './components/header/Header.vue';
+import Main from './components/Main.vue';
+
 </script>
+
+<style scoped lang="scss">
+.body__container {
+  margin: 0 auto;
+  max-width: 1440px;
+  min-width: 375px;
+  position: relative;
+}
+</style>
