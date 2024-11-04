@@ -1,8 +1,13 @@
 <template>
   <div>
     <Header />
+<<<<<<< HEAD
     <SidebarNavigation />
     <Hero />
+=======
+    <!-- Слот для отображения основного контента страниц -->
+    <NuxtPage />
+>>>>>>> 1afe5550657bc40962550d2e525daa8d6beda468
   </div>
 </template>
 
