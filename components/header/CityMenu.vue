@@ -22,24 +22,22 @@ function selectCity(city: string) {
 <style scoped lang="scss">
 .city-menu {
     position: absolute;
-    top: 100%;
+    top: 110%;
     left: 0;
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 10px;
     border-radius: 5px;
+    width: 150%;
 
     ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-
         li {
             padding: 8px;
             cursor: pointer;
 
             &:hover {
-                background-color: #f0f0f0;
+                color: #f269af;
+                
             }
         }
     }
