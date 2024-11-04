@@ -85,7 +85,6 @@ onBeforeUnmount(() => {
     flex-direction: column;
     justify-content: flex-start;
     padding: 20px 0;
-    z-index: 1;
 }
 
 .sidebar-navigation__list {

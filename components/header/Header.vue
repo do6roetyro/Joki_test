@@ -1,28 +1,31 @@
 <template>
     <header class="header">
-        <div class="header__logo">
-            <a href="/" class="header__home-link">
-                <img src="../../public/icons/header_logo.svg" alt="Joki Joya" width="40" height="40" />
-            </a>
-        </div>
-        <div class="header__main">
-            <div class="header__main-left">
-                <div class="header__city" @click="toggleCityMenu">
-                    <span>Москва</span>
-                    <CityMenu v-if="isCityMenuOpen" @close="toggleCityMenu" />
+        <div class="header__container">
+            <div class="header__logo">
+                <a href="/" class="header__home-link">
+                    <img src="../../public/icons/header_logo.svg" alt="Joki Joya" width="40" height="40" />
+                </a>
+            </div>
+            <div class="header__main">
+                <div class="header__main-left">
+                    <div class="header__city" @click="toggleCityMenu">
+                        <span>Москва</span>
+                        <CityMenu v-if="isCityMenuOpen" @close="toggleCityMenu" />
+                    </div>
+                    <a href="tel:+78126352277" class="header__phone">+7 (812) 635 22 77</a>
                 </div>
-                <a href="tel:+78126352277" class="header__phone">+7 (812) 635 22 77</a>
+                <div class="header__main-right">
+                    <a href="/buy-tickets" class="header__button header__button--pink">Купить билеты</a>
+                    <a href="/order-party" class="header__button header__button--green">Заказать праздник</a>
+                </div>
             </div>
-            <div class="header__main-right">
-                <a href="/buy-tickets" class="header__button header__button--pink">Купить билеты</a>
-                <a href="/order-party" class="header__button header__button--green">Заказать праздник</a>
+            <div class="header__menu-icon" @click="toggleMenu">
+                <img src="../../public/icons/header_menu_burger.svg" alt="Меню" width="40" height="40" />
+                <span class="visually-hidden">Меню</span>
+                <Menu v-if="isMenuOpen" @close="toggleMenu" />
             </div>
         </div>
-        <div class="header__menu-icon" @click="toggleMenu">
-            <img src="../../public/icons/header_menu_burger.svg" alt="Меню" width="40" height="40" />
-            <span class="visually-hidden">Меню</span>
-            <Menu v-if="isMenuOpen" @close="toggleMenu" />
-        </div>
+        <SidebarNavigation />
     </header>
 </template>
 
@@ -30,12 +33,15 @@
 import { useToggleMenu } from '~/composables/useToggleMenu';
 import CityMenu from "./CityMenu.vue";
 import Menu from "./Menu.vue";
+import SidebarNavigation from './SidebarNavigation.vue';
 
 const { isCityMenuOpen, toggleCityMenu, isMenuOpen, toggleMenu } = useToggleMenu();
 </script>
 
 <style scoped lang="scss">
-.header {
+.header {}
+
+.header__container {
     display: flex;
     justify-content: space-between;
     gap: 3.88vw;
@@ -44,6 +50,7 @@ const { isCityMenuOpen, toggleCityMenu, isMenuOpen, toggleMenu } = useToggleMenu
     width: 100vw;
     top: 0;
     background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
     padding: 10px 20px;
     border-bottom: 2px solid transparent;
     border-image: linear-gradient(227.56deg,
@@ -53,7 +60,7 @@ const { isCityMenuOpen, toggleCityMenu, isMenuOpen, toggleMenu } = useToggleMenu
             #e84bba 65.89%,
             #9310d8 99.13%);
     border-image-slice: 1;
-    z-index: 1000;
+    z-index: 99;
     min-width: 375px;
 }
 
@@ -61,6 +68,7 @@ const { isCityMenuOpen, toggleCityMenu, isMenuOpen, toggleMenu } = useToggleMenu
     display: flex;
     justify-content: space-between;
     flex-grow: 1;
+
 }
 
 .header__main-left {
@@ -162,7 +170,7 @@ const { isCityMenuOpen, toggleCityMenu, isMenuOpen, toggleMenu } = useToggleMenu
 }
 
 .header__menu-icon {
-   flex-shrink: 0;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -174,16 +182,16 @@ const { isCityMenuOpen, toggleCityMenu, isMenuOpen, toggleMenu } = useToggleMenu
 }
 
 @media (max-width: 940px) {
-   
+
     .header__button--green {
         display: none;
     }
 }
 
 @media (max-width: 768px) {
+
     .header__city,
-    .header__phone
-     {
+    .header__phone {
         display: none;
     }
 
