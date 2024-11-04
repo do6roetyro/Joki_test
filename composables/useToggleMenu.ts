@@ -1,4 +1,4 @@
-import { ref, Ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, type Ref, onMounted, onBeforeUnmount } from 'vue';
 
 export function useToggleMenu(): {
     isCityMenuOpen: Ref<boolean>;

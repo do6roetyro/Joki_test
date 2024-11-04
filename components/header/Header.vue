@@ -1,24 +1,24 @@
 <template>
     <header class="header">
-        <div class="header__left">
-            <a href="/" class="header__logo">
-                <img src="../../public/icons/header_logo.svg" alt="Joki Joya" width="40" height="40" />
-            </a>
-            <div class="header__city" @click="toggleCityMenu">
-                <span>Москва</span>
-                <CityMenu v-if="isCityMenuOpen" @close="toggleCityMenu" />
+            <div class="header__left">
+                <a href="/" class="header__logo">
+                    <img src="../../public/icons/header_logo.svg" alt="Joki Joya" width="40" height="40" />
+                </a>
+                <div class="header__city" @click="toggleCityMenu">
+                    <span>Москва</span>
+                    <CityMenu v-if="isCityMenuOpen" @close="toggleCityMenu" />
+                </div>
+                <a href="tel:+78126352277" class="header__phone">+7 (812) 635 22 77</a>
             </div>
-            <a href="tel:+78126352277" class="header__phone">+7 (812) 635 22 77</a>
-        </div>
-        <div class="header__right">
-            <a href="/buy-tickets" class="header__button header__button--pink">Купить билеты</a>
-            <a href="/order-party" class="header__button header__button--green">Заказать праздник</a>
-            <div class="header__menu-icon" @click="toggleMenu">
-                <img src="../../public/icons/header_menu_burger.svg" alt="Меню" width="40" height="40" />
-                <span class="visually-hidden">Меню</span>
-                <Menu v-if="isMenuOpen" @close="toggleMenu" />
-            </div>
-        </div>
+            <div class="header__right">
+                <a href="/buy-tickets" class="header__button header__button--pink">Купить билеты</a>
+                <a href="/order-party" class="header__button header__button--green">Заказать праздник</a>
+                <div class="header__menu-icon" @click="toggleMenu">
+                    <img src="../../public/icons/header_menu_burger.svg" alt="Меню" width="40" height="40" />
+                    <span class="visually-hidden">Меню</span>
+                    <Menu v-if="isMenuOpen" @close="toggleMenu" />
+                </div>
+            </div>   
     </header>
 </template>
 
@@ -49,10 +49,15 @@ const { isCityMenuOpen, toggleCityMenu, isMenuOpen, toggleMenu } = useToggleMenu
             #9310d8 99.13%);
     border-image-slice: 1;
     z-index: 1000;
+
     &__left,
     &__right {
         display: flex;
         align-items: center;
+    }
+
+    &__logo {
+        flex-shrink: 0;
     }
 
     &__logo img {
@@ -61,7 +66,6 @@ const { isCityMenuOpen, toggleCityMenu, isMenuOpen, toggleMenu } = useToggleMenu
     }
 
     &__city {
-        margin-left: 56px;
         padding: 6.5px 16px;
         display: flex;
         align-items: center;
@@ -104,6 +108,7 @@ const { isCityMenuOpen, toggleCityMenu, isMenuOpen, toggleMenu } = useToggleMenu
         text-align: center;
         border: 2px solid #5834a4;
         border-radius: 30px;
+        min-width: 227px;
 
         &::before {
             content: "";
@@ -160,7 +165,6 @@ const { isCityMenuOpen, toggleCityMenu, isMenuOpen, toggleMenu } = useToggleMenu
     }
 
     @media (max-width: 768px) {
-
         .header__city,
         .header__phone,
         .header__button--green {
