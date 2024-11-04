@@ -24,6 +24,7 @@ function selectCity(city: string) {
     position: absolute;
     top: 110%;
     left: 0;
+    
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 10px;
