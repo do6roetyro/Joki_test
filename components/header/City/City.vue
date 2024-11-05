@@ -16,22 +16,21 @@
     <CityMenu
       v-if="isCityMenuOpen"
       @close="toggleCityMenu"
-      @select-city="updateCity"
+      @select-city="handleCityUpdate"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import { useToggleMenu } from "~/composables/useToggleMenu";
+import { useCitySelection } from "~/composables/useCitySelection";
 import CityMenu from "./CityMenu.vue";
 
-const selectedCity = ref("Москва");
-
+const { selectedCity, updateCity } = useCitySelection();
 const { isCityMenuOpen, toggleCityMenu } = useToggleMenu();
 
-function updateCity(city: string) {
-  selectedCity.value = city;
+function handleCityUpdate(city: string) {
+  updateCity(city);
   toggleCityMenu();
 }
 </script>

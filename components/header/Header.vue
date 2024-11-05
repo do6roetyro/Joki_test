@@ -27,7 +27,6 @@
 </template>
 
 <script setup lang="ts">
-import { useToggleMenu } from "~/composables/useToggleMenu";
 import SidebarNavigation from "./SidebarNavigation.vue";
 import PhoneLink from "./Links/PhoneLink.vue";
 import ButtonLink from "./Links/ButtonLink.vue";
