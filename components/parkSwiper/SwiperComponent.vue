@@ -31,17 +31,14 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 
-// Создайте массив с данными для слайдов
 const slides = [
   { image: "/images/park_slider.jpg" },
   { image: "/images/park_slider.jpg" },
   { image: "/images/park_slider.jpg" },
 ];
 
-// Создайте реактивную переменную для отслеживания текущего слайда
 const currentSlide = ref(0);
 
-// Функция для обновления индекса текущего слайда
 const onSlideChange = (swiper) => {
   currentSlide.value = swiper.activeIndex;
 };
