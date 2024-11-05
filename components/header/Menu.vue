@@ -10,17 +10,17 @@
     </nav>
   </div>
 </template>
-  
-<script setup lang="ts">
-import { defineEmits } from 'vue'
 
-const emit = defineEmits(['close'])
+<script setup lang="ts">
+import { defineEmits } from "vue";
+
+const emit = defineEmits(["close"]);
 </script>
-  
+
 <style scoped lang="scss">
 .menu-overlay {
   position: fixed;
-  top: 61.5px; 
+  top: 61.5px;
   left: 0;
   width: 100%;
   height: 100vh;
@@ -35,17 +35,17 @@ const emit = defineEmits(['close'])
 .menu {
   background: none;
   padding: 0;
-  
+
   ul {
     list-style: none;
     padding: 0;
-    
+
     li {
       margin: 20px 0;
-      
+
       a {
         text-decoration: none;
-        font-size: 2rem; 
+        font-size: 2rem;
         color: #000000;
         font-family: "drukwidecyr";
         text-transform: uppercase;
@@ -53,9 +53,9 @@ const emit = defineEmits(['close'])
         text-align: end;
         padding-left: 20px;
         transition: color 0.3s;
-        
+
         &:hover {
-          color: #f269af; 
+          color: #f269af;
         }
       }
     }

@@ -25,7 +25,7 @@ export function useToggleMenu(): {
 
     function handleClickOutside(event: MouseEvent): void {
         const target = event.target as HTMLElement;
-        if (!target.closest('.header__city') && !target.closest('.header__menu-icon')) {
+        if (!target.closest('.header__city') && !target.closest('.menu')) {
             closeMenus();
         }
     }

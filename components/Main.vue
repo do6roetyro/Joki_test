@@ -1,9 +1,11 @@
 <template>
-    <main>
-        <Hero />
-    </main>
+  <main>
+    <Hero />
+  </main>
 </template>
 
-<script>
-import Hero from './hero/Hero.vue';
+<script setup lang="ts">
+import Hero from "./hero/Hero.vue";
 </script>
+
+<style lang="sass" scoped></style>
