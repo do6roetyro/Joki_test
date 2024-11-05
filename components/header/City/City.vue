@@ -12,16 +12,28 @@
         fill="#5834A4"
       />
     </svg>
-    <span>Москва</span>
-    <CityMenu v-if="isCityMenuOpen" @close="toggleCityMenu" />
+    <span>{{ selectedCity }}</span>
+    <CityMenu
+      v-if="isCityMenuOpen"
+      @close="toggleCityMenu"
+      @select-city="updateCity"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import { useToggleMenu } from "~/composables/useToggleMenu";
 import CityMenu from "./CityMenu.vue";
 
+const selectedCity = ref("Москва");
+
 const { isCityMenuOpen, toggleCityMenu } = useToggleMenu();
+
+function updateCity(city: string) {
+  selectedCity.value = city;
+  toggleCityMenu();
+}
 </script>
 
 <style scoped lang="scss">
