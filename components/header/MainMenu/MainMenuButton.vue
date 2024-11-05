@@ -9,10 +9,10 @@
 </template>
 
 <script setup lang="ts">
-import { useToggleMenu } from "~/composables/useToggleMenu";
+import { useMainMenuToggle } from "~/composables/useMainMenuToggle";
 import MainMenuOverlay from "./MainMenuOverlay.vue";
 
-const { isMenuOpen, toggleMenu } = useToggleMenu();
+const { isMenuOpen, toggleMenu } = useMainMenuToggle();
 </script>
 
 <style scoped lang="scss">

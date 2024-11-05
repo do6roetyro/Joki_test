@@ -15,8 +15,8 @@ const emit = defineEmits(["close", "select-city"]);
 
 function selectCity(city: string) {
   console.log(`Selected city: ${city}`);
-  emit("select-city", city); 
-  emit("close"); 
+  emit("select-city", city);
+  emit("close");
 }
 </script>
 
